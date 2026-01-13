@@ -24,3 +24,8 @@ jobs:
           echo "hi"
           echo "good"
           echo "hey"
+
+      - name: github actions 에 저장되어 있는 변수들
+        run: |
+          echo $GITHUB_SHA
+        echo $GITHUB_REPOSITORY
