@@ -1,14 +1,26 @@
 
 
+# Event : 실행되는 시점 설정
+# main 이라는 브랜치에 push 할 때 아래 workflow 를 실행
 on:
   push:
     branches:
       - main
 
+# 하나의 workflow 는 1개 이상의 job 으로 구성됨
+# 여러 job은 기본적으로 병렬적으로 수행됨
 jobs:
+  # job 을 식별하기 위한 id(name)
   my-deploy-job:
+    # ubuntu 환경에서 실행
     runs-on: ubuntu-latest
 
     steps:
       - name: hello world!
         run: echo "hello world!"
+
+      - name: 여러 명령어 문장 작성하기
+        run: |
+          echo "hi"
+          echo "good"
+          echo "hey"
